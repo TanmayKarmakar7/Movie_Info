@@ -50,7 +50,7 @@ searchForm.addEventListener("submit", (e) => {
 
 const getMovieInfo = async (searchValue) => {
     const myApiKey = "64f6736";
-    const URL = `http://www.omdbapi.com/?apikey=${myApiKey}&t=${searchValue}`;
+    const URL = `https://www.omdbapi.com/?apikey=${myApiKey}&t=${searchValue}`;
 
     const response = await fetch(URL);
     const data = await response.json();

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Movie Info</title>
+    <style>
+        body{
+            font-family: "Poppins", sans-serif;
+        }
+        .genre-style{
+            background: #64798A;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="flex flex-col justify-between h-[100vh]">
+    <!-- navbar -->
+    <nav class="bg-[#314f67]">
+        <div class="flex flex-col justify-center items-center gap-7 md:flex-row md:justify-between px-20 py-4">
+            <div class="flex gap-2 items-center">
+                <img src="./Assets/logo.png" alt="Logo" class="h-8">
+                <h2 class="text-2xl font-bold font-myFont text-white">Movie <span class="text-[#EFC84A]">Info</span></h2>
+            </div>
+            <div class="ml-3 md:ml-0">
+                <form action="" class="flex gap-1 items-center">
+                    <input id="input-box" type="text" placeholder="Enter Movie Name" class="text-sm pl-4 pr-4 md:pr-10 py-2 outline-none bg-white flex justify-center items-center rounded-full">
+                    <button type="submit" class="bg-[#EFC84A] px-3 py-2 rounded-full hover:opacity-85 transition active:scale-90"><i class="fa-solid fa-magnifying-glass cursor-pointer text-[#64798A]"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Before & wrong fetch data -->
+    <div id="content" class="flex flex-col justify-center items-center mx-5 py-10 overflow-hidden">
+        <img id="content-img" src="./Assets/search.jpg" alt="serach image" class="h-full">
+        <h2 id="content-text" class="text-xl text-gray-500 mt-2">Search Movie Information</h2>
+    </div>
+
+    <div id="loading" class="hidden flex-col justify-center items-center mx-5 py-10 overflow-hidden">
+        <img src="./Assets/loading.gif" alt="serach image" class="h-full">
+        <h2 class="text-xl text-gray-500 mt-2">Fetching Movie Details...</h2>
+    </div>
+
+    <!-- main data after fetching -->
+    <main class="hidden my-10 md:my-2 mx-5 sm:mx-10 lg:mx-48">
+        <div class="border shadow-myShadow flex flex-col md:flex-row gap-1 md:gap-5 rounded-2xl overflow-hidden mx-auto">
+            <div class="md:basis-[60%] lg:basis-[40%]">
+                <img id="movie-poster" src="" alt="movie poster" class="h-full lg:h-[520px] w-full">
+            </div>
+            <div class="md:basis-[40%] lg:basis-[60%] mx-7 my-7">
+                <div class="flex flex-col items-center">
+                    <h1 id="movie-name" class="text-2xl md:text-3xl font-bold text-[#64798A] text-center">Loding...</h1>
+                    <div class="flex items-center gap-1 my-3">
+                        <p class="font-semibold">Rating:</p>
+                        <i class="fa-solid fa-star text-yellow-400"></i>
+                        <p id="movie-rating" class="font-medium text-gray-500">Loding...</p>
+                    </div>
+                    <div id="movie-genre-div" class="flex gap-3 flex-wrap justify-center">
+                        
+                    </div>
+                </div>
+                <div class="mt-10 flex flex-col gap-5">
+                    <h2 class="font-semibold text-[16px]">Released Date: <span id="movie-date" class="font-medium text-[#2e2e2eab]">Loding...</span></h2>
+                    <h2 class="font-semibold text-[16px]">Runtime: <span id="movie-runtime" class="font-medium text-[#2e2e2eab]">Loding...</span></h2>
+                    <h2 class="font-semibold text-[16px]">Cast: <span id="movie-cast" class="font-medium text-[#2e2e2eab]">Loding...</span></h2>
+                    <h2 class="font-semibold text-[16px]">Director: <span id="movie-director" class="font-medium text-[#2e2e2eab]">Loding...</span></h2>
+                    <h2 class="font-semibold text-[16px]">Writer: <span id="movie-writer" class="font-medium text-[#2e2e2eab]">Loding...</span></h2>
+                    <h2 class="font-semibold text-[16px]">Plot: <span id="movie-plot" class="font-medium text-[#2e2e2eab]">Loding...</span></h2>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="bg-[#314f67]">
+        <h2 class="text-white py-3 text-center text-sm">This website is developed by <span class="text-[#ffd445] font-medium">Tanmay Karmakar</span></h2>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

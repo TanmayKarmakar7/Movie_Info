@@ -119,3 +119,7 @@ const showMovieData = (data) => {
         }
     }
 }
+
+function reloadPage(){
+    location.reload();
+}
